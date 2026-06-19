@@ -150,7 +150,8 @@ Removed .terraform from Git history
 Cleaned repository using git filter-branch
 Added proper .gitignore
 Re-pushed clean repository
-🧠 Key Skills Demonstrated
+## Key Skills Demonstrated
+
 AWS EKS troubleshooting and debugging
 Terraform infrastructure lifecycle management
 Kubernetes workload debugging
@@ -159,13 +160,15 @@ VPC networking and dependency resolution
 CI/CD design using GitHub Actions
 Secure authentication using OIDC federation
 Real-world DevOps problem solving
-📈 Outcome
+
+## Outcome
 Fully deployed AWS EKS cluster
 Automated infrastructure provisioning with Terraform
 Secure CI/CD pipeline design (no static credentials)
 Production-style cloud architecture
 Clean and reusable DevOps repository
-👨‍💻 Author
+
+## Author
 
 Teajo99
 
