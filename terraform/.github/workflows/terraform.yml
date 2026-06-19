@@ -1,0 +1,50 @@
+name: Deploy EKS with Terraform
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./terraform
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 🔐 Authenticate to AWS using OIDC (NO KEYS)
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::957117875303:role/github-actions-terraform
+          aws-region: eu-west-2
+
+      # Install Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # Init
+      - name: Terraform Init
+        run: terraform init
+
+      # Validate
+      - name: Terraform Validate
+        run: terraform validate
+
+      # Plan (safe check)
+      - name: Terraform Plan
+        run: terraform plan
+
+      # Apply ONLY on main branch
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve
