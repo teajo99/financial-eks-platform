@@ -20,6 +20,25 @@ The project demonstrates real-world DevOps practices including infrastructure pr
 
 ---
 
+## Architecture
+[ GitHub Actions ]
+        ↓
+[ IAM OIDC Role ]
+        ↓
+[ AWS VPC ]
+        ↓
+[ EKS Cluster ]
+        ↓
+[ Node Group (t3.micro) ]
+        ↓
+[ Kubernetes Pods ]
+        ↓
+[ Internet Gateway ]
+        ↓
+[ Public Access ]
+
+GitHub Actions → IAM Role → AWS VPC → EKS → Kubernetes → Internet
+
 ##  Tech Stack
 
 - Terraform (Infrastructure as Code)
