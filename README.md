@@ -6,8 +6,8 @@ This project provisions a production-grade AWS EKS Kubernetes cluster using Terr
 ---
 
 ## 🏗️ Architecture
-- AWS VPC (Public + Private Subnets)
-- Internet Gateway + NAT Gateway
+- AWS VPC (Public Subnets)
+- Internet Gateway 
 - Amazon EKS Cluster
 - Managed Node Group (t3.micro)
 - GitHub Actions CI/CD Pipeline
